@@ -2,9 +2,16 @@
 
 import os
 
+from homework import pregunta_01 as pregunta
+
 
 def test_01():
-    """Test word count job."""
+    """Test homework"""
 
-    assert os.path.exists("files/output/summary.csv")
-    assert os.path.exists("files/plots/top10_drivers.png")
+    if os.path.exists("files/plots/news.png"):
+        os.remove("files/plots/news.png")
+        os.removedirs("files/plots")
+
+    pregunta.pregunta_01()
+
+    assert os.path.exists("files/plots/news.png")
